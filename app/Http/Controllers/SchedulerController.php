@@ -17,7 +17,7 @@ class SchedulerController extends Controller {
         return view('home.index', compact('events'));
     }
 
-    
+
     public function submit (Request $request) {
 
         $nomorDua = new NomorDua();

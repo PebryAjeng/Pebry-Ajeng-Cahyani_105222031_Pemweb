@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	
+
 	$('.table-schedule').DataTable({
 		language: {
 			paginate: {

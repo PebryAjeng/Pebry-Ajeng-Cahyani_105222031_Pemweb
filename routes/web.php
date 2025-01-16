@@ -21,7 +21,9 @@ Route::post('auth', [AuthController::class, 'auth'])->name('auth');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/event/submit', [SchedulerController::class, 'submit'])->name('event.submit');
-Route::get('/home', [SchedulerController::class, 'home'])->name('event.home');
+// Route::get('/home', [SchedulerController::class, 'home'])->name('event.home');
+Route::get('event/get-selected-data', [SchedulerController::class, 'getSelectedData'])->name('event.get-selected-data');
+
 
 Route::prefix('event')->name('event.')->group(function(){
     Route::get('/', [SchedulerController::class, 'home'])->name('home');
