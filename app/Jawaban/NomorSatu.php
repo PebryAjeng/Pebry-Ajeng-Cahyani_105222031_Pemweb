@@ -7,17 +7,28 @@ use Illuminate\Http\Request;
 
 class NomorSatu {
 
+
 	public function auth (Request $request) {
 
-		// Tuliskan code untuk proses login dengan menggunakan email/username dan password
+
+$credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        // Login berhasil
+        return redirect()->route('event.home')->with('success', 'Login berhasil!');
+    } else {
+        // Login gagal
+        return redirect()->back()->with('error', 'Email atau password salah!');
+    }
 
 		return redirect()->route('event.home');
 	}
 
 	public function logout (Request $request) {
 
-		// Tuliskan code untuk menangani proses logout
-        
+		Auth::logout();
+        return redirect()->route('event.home')->with('success', 'Logout berhasil!');
+
         return redirect()->route('event.home');
 	}
 }

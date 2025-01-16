@@ -11,12 +11,13 @@ class SchedulerController extends Controller {
 
     public function home () {
 
-        $nomorTiga = new NomorTiga(); 
+        $nomorTiga = new NomorTiga();
         $events = $nomorTiga->getData();
 
         return view('home.index', compact('events'));
     }
 
+    
     public function submit (Request $request) {
 
         $nomorDua = new NomorDua();
@@ -26,12 +27,12 @@ class SchedulerController extends Controller {
     public function getJson () {
 
         $nomorEmpat = new NomorEmpat();
-        return $nomorEmpat->getJson(); 
+        return $nomorEmpat->getJson();
     }
 
     public function getSelectedData (Request $request) {
 
-        $nomorTiga = new NomorTiga(); 
+        $nomorTiga = new NomorTiga();
         return $nomorTiga->getSelectedData($request);
     }
 
