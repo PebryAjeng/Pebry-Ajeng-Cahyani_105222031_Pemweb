@@ -14,10 +14,10 @@ class NomorSatu {
 $credentials = $request->only('email', 'password');
 
     if (Auth::attempt($credentials)) {
-        // Login berhasil
+
         return redirect()->route('event.home')->with('success', 'Login berhasil!');
     } else {
-        // Login gagal
+
         return redirect()->back()->with('error', 'Email atau password salah!');
     }
 

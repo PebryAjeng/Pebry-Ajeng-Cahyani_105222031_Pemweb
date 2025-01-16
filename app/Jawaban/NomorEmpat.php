@@ -10,7 +10,6 @@ class NomorEmpat {
 
 	public function getJson () {
 
-		// Tuliskan code untuk mengambil semua jadwal, simpan di variabel $data
 		$data = [];
 
 		return response()->json($data);
